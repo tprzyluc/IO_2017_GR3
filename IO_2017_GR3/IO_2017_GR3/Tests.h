@@ -1,18 +1,18 @@
 #pragma once
 #include "Zadanie.h"
 #include "DeleteFromTask.h"
+#include"Task.h"
 
-void test1_delete_task(Zadanie *zadanie)
+void test1_delete_task(Task *task)
 {
 	DeleteFromTask deleteFromTask;
-	zadanie->owner = "Adam Kowalski";
-	zadanie->creator = "Jan Kowalski";
-	zadanie->id_zadania = 0;
+	task->name = "Adam Kowalski";
+	task->id = 0;
 
-	zadanie->print();
-	zadanie->~Zadanie();
-	string komunikat = deleteFromTask.delete_task(zadanie);
+	//zadanie->print();
+	//zadanie->~Zadanie();
+	string komunikat = deleteFromTask.delete_task(task);
 	deleteFromTask.print(komunikat);
 	cout << "--------------------------------" << endl;
-	zadanie->print();
+	//zadanie->print();
 }

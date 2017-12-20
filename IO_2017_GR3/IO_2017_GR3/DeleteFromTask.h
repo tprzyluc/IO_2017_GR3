@@ -3,6 +3,7 @@
 #include "Zadanie.h"
 #include "Pracownik.h"
 #include <iostream>
+#include "Task.h"
 
 using namespace std;
 
@@ -10,8 +11,8 @@ using namespace std;
 class DeleteFromTask
 {
 public:
-	Zadanie zadanie;
-	string delete_task(Zadanie *&zadanie);
+	Task zadanie;
+	string delete_task(Task *&zadanie);
 	DeleteFromTask();
 	void print(string);
 	~DeleteFromTask();
