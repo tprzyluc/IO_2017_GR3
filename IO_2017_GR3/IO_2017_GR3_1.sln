@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.0
+VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IO_2017_GR3", "IO_2017_GR3\IO_2017_GR3.vcxproj", "{983205A4-C10F-4E45-98CA-3C8F28E4B16B}"
 EndProject

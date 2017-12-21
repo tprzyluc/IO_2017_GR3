@@ -11,6 +11,7 @@ int main()
 	task->description = " Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum";
 	//cout << task->description << endl;
 	dump(task->description);
+	dump("Cos tam do wypisania");
 	cout << "Cos tam" << endl;
 
 	system("pause");
