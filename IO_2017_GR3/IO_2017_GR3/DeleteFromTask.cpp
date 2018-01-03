@@ -4,7 +4,6 @@
 #include "Zadanie.h"
 #include <string>
 #include <string.h>
-#include <Windows.h>
 #include"Task.h"
 
 
