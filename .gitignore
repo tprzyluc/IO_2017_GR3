@@ -23,6 +23,7 @@ IO_2017_GR3/Debug/*
 *.pyc
 *.xml
 *.opendb
+*.db
 ipch/
 obj/
 [Bb]in
