@@ -13,7 +13,10 @@ public:
 		
 	
 	void dodaj_komentarz(Komentarz);
-	Komentarz(string Tresc, int id_User);
+	Komentarz(string Tresc, int id_User)
+	{
+
+	};
 
 };
 

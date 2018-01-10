@@ -4,6 +4,8 @@
 
 using namespace std;
 
+
+
 int main()
 {
 	Task *task = new Task();
@@ -13,6 +15,9 @@ int main()
 	//cout << task->description << endl;
 	//dump(task->description);
 	//dump("Cos tam do wypisania");
+
+	Komentarz k("tresc", 1);
+	test2_comment<Komentarz>(k);
 
 	system("pause");
 	return 0;
