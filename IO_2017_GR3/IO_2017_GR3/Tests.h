@@ -8,49 +8,80 @@
 
 void test1_delete_task(Task *task)
 {
-	/*
-	DeleteFromTask deleteFromTask;
-	task->name = "Adam Kowalski";
-	task->id = 0;
+	////////////////
 
-	//zadanie->print();
-	//zadanie->~Zadanie();
-	string komunikat = deleteFromTask.delete_task(task);
-	deleteFromTask.print(komunikat);
-	cout << "--------------------------------" << endl;
-	//zadanie->print();
-	*/
-	//task->name = "Janek";
+	task->description = "description";
+	task->id = 4;
+	task->name = "Jan";
+
+
+	////////////////
+
 
 	dump("Starting test for checking task");
 	clear_view();
-
-
 	int cnt_fails = 0;
-	code_err error_code;
 	bool status;
-
+	code_err error_code;
 	if (task->name == "") {
 		error_code = CREATOR_ERR;
 		status = false;
 		dump_fail(err(error_code), status);
-		cnt_fails++; 
-
-	}
-	else
-	{
-		//dump_fail("STATUS TEST: PASS");
-	}
-	if (task->description == "") {
-		error_code = DESC_ERR;
-		status = false; 
-		dump_fail(err(error_code),status);
 		cnt_fails++;
 
 	}
-	else
+	else if (1)
 	{
-		//dump_fail("STATUS TEST: PASS");
+		for (int i = 0; i < task->name.length(); i++)
+		{
+			if ((task->name[i] < 97 && task->name[i]>122) || (task->name[i] < 65 && task->name[i]>90)) {
+				error_code = CREATOR_ERR;
+				status = false;
+				dump_fail(err(error_code), status);
+				cnt_fails++;
+
+			}
+		}
+	}
+	if (task->description == "") {
+		error_code = DESC_ERR;
+		status = false;
+		dump_fail(err(error_code), status);
+		cnt_fails++;
+	}
+	else if (1)
+	{
+		for (int i = 0; i < task->description.length(); i++)
+		{
+			if ((task->description[i] < 97 && task->description[i]>122) || (task->description[i] < 65 && task->description[i]>90)) {
+				error_code = DESC_ERR;
+				status = false;
+				dump_fail(err(error_code), status);
+				cnt_fails++;
+
+			}
+		}
+	}
+	if (task->id < 0)
+	{
+		error_code = ID_ERR;
+		status = false;
+		dump_fail(err(error_code), status);
+		cnt_fails++;
+	}
+	if (task->id < 0)
+	{
+		error_code = ID_ERR;
+		status = false;
+		dump_fail(err(error_code), status);
+		cnt_fails++;
+	}
+	if (task->id < 0)
+	{
+		error_code = ID_ERR;
+		status = false;
+		dump_fail(err(error_code), status);
+		cnt_fails++;
 	}
 
 	if (cnt_fails > 0)

@@ -54,6 +54,8 @@ void dump_fail(string str,int val)
 	}
 	cout << endl;
 }
+
+// add status true, change name of function -> dump_status
 void dump_fail(string str, bool status)
 {
 	if (status == false) {
@@ -71,6 +73,7 @@ void dump_fail(string str, bool status)
 		}
 		cout << endl;
 	}
+
 }
 void clear_view()
 {
@@ -84,7 +87,8 @@ enum code_err {
 	CREATOR_ERR  = 1,
 	DESC_ERR	 = 2,
 	ASSIGNEE_ERR = 3,
-	PRIORITY_ERR = 4
+	PRIORITY_ERR = 4,
+	ID_ERR		 = 5,
 
 };
 string err(int num_err)
@@ -106,7 +110,7 @@ string err(int num_err)
 		description = "This task has not got: Priority!";
 		return description;
 	case 5:
-		description = "This task has not got: assignee!";
+		description = "This task has wrong ID - less than 0";
 		return description;
 	case 6:
 		description = "This task has not got: none!";
