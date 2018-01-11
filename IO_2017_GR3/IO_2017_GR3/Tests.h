@@ -158,7 +158,7 @@ template <typename Comment> struct  message_test
 	struct tests
 	{
 		template<typename Comment, typename int_<decltype(Comment::message)>::type = 0>
-		void test_date(Comment comment, special_)
+		void test_message(Comment comment, special_)
 		{
 			if (typeid(comment.message) != typeid(string))
 			{
@@ -174,7 +174,6 @@ template <typename Comment> struct  message_test
 					dump_fail("FAIL: class member 'message' is empty");
 			}
 		}
-
 
 
 		template<typename Comment>
@@ -202,7 +201,7 @@ template <typename Comment> struct  user_test
 	{
 
 		template<typename Comment, typename int_<decltype(Comment::user)>::type = 0>
-		void test_date(Comment comment, special_)
+		void test_user(Comment comment, special_)
 		{
 			if (typeid(comment.user) != typeid(string))
 			{
