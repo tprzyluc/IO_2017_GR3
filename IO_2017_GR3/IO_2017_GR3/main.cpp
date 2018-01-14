@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Tests.h"
 #include "dump.h"
+#include "TemporaryComment.h"
 
 using namespace std;
 
@@ -17,8 +18,11 @@ int main()
 	//dump(task->description);
 	//dump("Cos tam do wypisania");
 
-	Komentarz k("tresc", 1);
-	test2_comment<Komentarz>(k);
+
+	TemporaryComment comment("Kacper", "Lprem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum");
+	test2_comment<TemporaryComment>(comment);
+	cout << comment.date << endl;
+
 
 	system("pause");
 	return 0;

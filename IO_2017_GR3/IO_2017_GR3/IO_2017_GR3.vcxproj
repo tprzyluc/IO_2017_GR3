@@ -120,6 +120,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Pracownik.cpp" />
     <ClCompile Include="Task.cpp" />
+    <ClCompile Include="TemporaryComment.cpp" />
     <ClCompile Include="Zadanie.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +130,7 @@
     <ClInclude Include="Nagłówek.h" />
     <ClInclude Include="Pracownik.h" />
     <ClInclude Include="Task.h" />
+    <ClInclude Include="TemporaryComment.h" />
     <ClInclude Include="Tests.h" />
     <ClInclude Include="Zadanie.h" />
   </ItemGroup>
