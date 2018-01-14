@@ -10,6 +10,7 @@ int main()
 {
 	Task *task = new Task();
 	test1_delete_task(*&task);
+	test2_delete_task(*&task);
 	cout << endl;
 	//task->description = " Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum";
 	//cout << task->description << endl;
