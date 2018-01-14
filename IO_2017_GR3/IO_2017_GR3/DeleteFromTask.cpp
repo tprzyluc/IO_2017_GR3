@@ -30,7 +30,7 @@ DeleteFromTask::~DeleteFromTask()
 
 string DeleteFromTask::delete_task(Task *&task)
 {
-	cout << "Assigne: " << task->name << endl;
+	cout << "Assigne: " << task->reporter << endl;
 	cout << " Zadanie " << task->id<< " zostalo usuniete " << endl;
 	cout << "Opis: " << task->description << endl;
 

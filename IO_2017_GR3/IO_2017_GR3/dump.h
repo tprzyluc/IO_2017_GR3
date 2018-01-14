@@ -6,72 +6,96 @@
  
 
 
-void dump(string str)
+void dump(string str,bool debug)
 {
-	for (int i = 0; i < str.length()+5; i++)
-	{
-		cout << "*";
+	if (debug == true) {
+		for (int i = 0; i < str.length() + 5; i++)
+		{
+			cout << "*";
 
-	}
-	cout << endl;
-	cout << "* " << str << "  *" << endl;
-	for (int i = 0; i < str.length()+5; i++)
-	{
-		cout << "*";
+		}
+		cout << endl;
+		cout << "* " << str << "  *" << endl;
+		for (int i = 0; i < str.length() + 5; i++)
+		{
+			cout << "*";
 
+		}
+		cout << endl;
 	}
-	cout << endl;
 }
-void dump_fail(string str)
+void dump_status(string str,bool debug)
 {
-	for (int i = 0; i < str.length() + 5; i++)
-	{
-		cout << "-";
+	if (debug == true) {
+		for (int i = 0; i < str.length() + 5; i++)
+		{
+			cout << "-";
 
-	}
-	cout << endl;
-	cout << "| " << str << " |" << endl;
-	for (int i = 0; i < str.length() + 5; i++)
-	{
-		cout << "-";
+		}
+		cout << endl;
+		cout << "| " << str << " |" << endl;
+		for (int i = 0; i < str.length() + 5; i++)
+		{
+			cout << "-";
 
+		}
+		cout << endl;
 	}
-	cout << endl;
 }
-void dump_fail(string str,int val)
+void dump_status(string str,int val,bool debug)
 {
-	for (int i = 0; i < str.length() + 5; i++)
-	{
-		cout << "-";
+	if (debug == true) {
+		for (int i = 0; i < str.length() + 5; i++)
+		{
+			cout << "-";
 
-	}
-	cout << endl;
-	cout << "|" << str <<" " << val <<" |" << endl;
-	for (int i = 0; i < str.length() + 5; i++)
-	{
-		cout << "-";
+		}
+		cout << endl;
+		cout << "|" << str << " " << val << " |" << endl;
+		for (int i = 0; i < str.length() + 5; i++)
+		{
+			cout << "-";
 
+		}
+		cout << endl;
 	}
-	cout << endl;
 }
 
 // add status true, change name of function -> dump_status
-void dump_fail(string str, bool status)
+void dump_status(string str, bool status,bool debug)
 {
-	if (status == false) {
-		for (int i = 0; i < str.length() + 10; i++)
-		{
-			cout << "-";
+	if (debug == true) {
+		if (status == false) {
+			for (int i = 0; i < str.length() + 10; i++)
+			{
+				cout << "-";
 
-		}
-		cout << endl;
-		cout << "|" << "FAIL: " << str << "  |" << endl;
-		for (int i = 0; i < str.length() + 10; i++)
-		{
-			cout << "-";
+			}
+			cout << endl;
+			cout << "|" << "FAIL: " << str << "  |" << endl;
+			for (int i = 0; i < str.length() + 10; i++)
+			{
+				cout << "-";
 
+			}
+			cout << endl;
 		}
-		cout << endl;
+		else
+		{
+			for (int i = 0; i < str.length() + 10; i++)
+			{
+				cout << "-";
+
+			}
+			cout << endl;
+			cout << "|" << "PASS: " << str << "  |" << endl;
+			for (int i = 0; i < str.length() + 10; i++)
+			{
+				cout << "-";
+
+			}
+			cout << endl;
+		}
 	}
 
 }
@@ -86,7 +110,7 @@ void clear_view()
 enum code_err {
 	CREATOR_ERR  = 1,
 	DESC_ERR	 = 2,
-	ASSIGNEE_ERR = 3,
+	ASSIGNE_ERR  = 3,
 	PRIORITY_ERR = 4,
 	ID_ERR		 = 5,
 
