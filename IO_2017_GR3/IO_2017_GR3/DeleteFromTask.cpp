@@ -4,7 +4,6 @@
 #include "Zadanie.h"
 #include <string>
 #include <string.h>
-#include <Windows.h>
 #include"Task.h"
 
 
@@ -31,7 +30,7 @@ DeleteFromTask::~DeleteFromTask()
 
 string DeleteFromTask::delete_task(Task *&task)
 {
-	cout << "Assigne: " << task->name << endl;
+	cout << "Assigne: " << task->reporter << endl;
 	cout << " Zadanie " << task->id<< " zostalo usuniete " << endl;
 	cout << "Opis: " << task->description << endl;
 
