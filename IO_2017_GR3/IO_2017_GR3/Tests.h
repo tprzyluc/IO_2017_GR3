@@ -55,7 +55,7 @@ int test1_delete_task(Task *task)
 		{
 			for (int i = 0; i < task[i].reporter.length(); i++)
 			{
-				if ((task[i].reporter[i] < 97 && task[i].reporter[i]>122) || (task[i].reporter[i] < 65 && task[i].reporter[i]>90)) {
+				if ((task[i].reporter[i] >= 97 && task[i].reporter[i]<=122) || (task[i].reporter[i] >= 65 && task[i].reporter[i]<=90)) {
 					error_code = CREATOR_ERR;
 					status = false;
 					dump_status(err(error_code), status,debug);
@@ -75,7 +75,7 @@ int test1_delete_task(Task *task)
 		{
 			for (int i = 0; i < task[i].assigne.length(); i++)
 			{
-				if ((task[i].assigne[i] < 97 && task[i].assigne[i]>122) || (task[i].assigne[i] < 65 && task[i].assigne[i]>90)) {
+				if ((task[i].assigne[i] >= 97 && task[i].assigne[i]<=122) || (task[i].assigne[i] >= 65 && task[i].assigne[i]<=90)) {
 					error_code = ASSIGNE_ERR;
 					status = false;
 					dump_status(err(error_code), status,debug);
@@ -94,7 +94,7 @@ int test1_delete_task(Task *task)
 		{
 			for (int i = 0; i < task[i].description.length(); i++)
 			{
-				if ((task[i].description[i] < 97 && task[i].description[i]>122) || (task[i].description[i] < 65 && task[i].description[i]>90)) {
+				if ((task[i].description[i] >= 97 && task[i].description[i]<=122) || (task[i].description[i] >= 65 && task[i].description[i]<=90)) {
 					error_code = DESC_ERR;
 					status = false;
 					dump_status(err(error_code), status,debug);
