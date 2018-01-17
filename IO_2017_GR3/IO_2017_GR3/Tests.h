@@ -26,16 +26,19 @@ int test1_delete_task(Task *task)
 	task[0].assigne = "Piotr Nowak";
 	task[0].description = "Lorem ipsum";
 	task[0].id = rand();
-	
+	task[0].updated = rand();
+
 	task[1].reporter = "";
 	task[1].assigne = "Piotr Nowak";
 	task[1].description = "Lorem ipsum";
 	task[1].id = rand();
+	task[1].updated;
 
 	task[2].reporter = "Jan Kowalski";
 	task[2].assigne = "";
 	task[2].description = "Lorem ipsum";
 	task[2].id;
+	task[2].updated = rand();
 
 	
 
@@ -124,6 +127,14 @@ int test1_delete_task(Task *task)
 			error_code = ID_ERR;
 			status = false;
 			dump_status(err(error_code), status,debug);
+			cnt_fails++;
+		}
+
+		if (task->updated < 0)
+		{
+			error_code = UPDATED_ERR;
+			status = false;
+			dump_status(err(error_code), status, debug);
 			cnt_fails++;
 		}
 
@@ -237,6 +248,15 @@ int test2_delete_task(Task *task)
 			dump_status(err(error_code), status, debug);
 			cnt_fails++;
 		}
+
+		if (task->updated < 0)
+		{
+			error_code = UPDATED_ERR;
+			status = false;
+			dump_status(err(error_code), status, debug);
+			cnt_fails++;
+		}
+
 
 		if (cnt_fails > 0)
 		{
