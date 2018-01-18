@@ -1,6 +1,5 @@
 #include "Pracownik.h"
 #include "Zadanie.h"
-#include "DeleteFromTask.h"
 
 Zadanie::Zadanie()
 {
