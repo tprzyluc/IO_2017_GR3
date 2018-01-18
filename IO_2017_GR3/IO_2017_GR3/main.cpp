@@ -30,6 +30,8 @@ int main()
 	cout << comment.date << endl;
 	commentNotification(comment);
 
+
+
 	system("pause");
 	return 0;
 }

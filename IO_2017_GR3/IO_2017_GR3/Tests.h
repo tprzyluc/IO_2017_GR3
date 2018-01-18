@@ -121,13 +121,7 @@ int test1_delete_task(Task *task)
 			dump_status(err(error_code), status, debug);
 			cnt_fails++;
 		}
-		if (task->updated < 0)
-		{
-			error_code = UPDATED_ERR;
-			status = false;
-			dump_status(err(error_code), status, debug);
-			cnt_fails++;
-		}
+		
 	}
 		if (cnt_fails > 0)
 		{
@@ -252,13 +246,6 @@ int test2_delete_task(Task *task)
 			cnt_fails++;
 		}
 
-		if (task->updated < 0)
-		{
-			error_code = UPDATED_ERR;
-			status = false;
-			dump_status(err(error_code), status, debug);
-			cnt_fails++;
-		}
 
 
 		if (cnt_fails > 0)
