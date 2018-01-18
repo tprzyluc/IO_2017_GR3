@@ -116,6 +116,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="add_comment.cpp" />
+    <ClCompile Include="AssignmentToTask.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NotificationOfChange.cpp" />
     <ClCompile Include="Pracownik.cpp" />
@@ -124,6 +125,7 @@
     <ClCompile Include="Zadanie.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AssignmentToTask.h" />
     <ClInclude Include="DeleteTask.h" />
     <ClInclude Include="dump.h" />
     <ClInclude Include="CommentNotification.h" />
