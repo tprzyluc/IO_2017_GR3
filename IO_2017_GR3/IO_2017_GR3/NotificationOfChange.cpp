@@ -28,6 +28,12 @@ string NotificationOfChange::change(Task *&zadanie)
 
 		return komunikat;
 	}
+	else
+	{
+		string komunikat = "Nie nast¹pi³a zmiana w zadaniu!";
+
+		return komunikat;
+	}
 
 }
 void NotificationOfChange::print(string komunikat)
