@@ -113,6 +113,7 @@ enum code_err {
 	ASSIGNE_ERR  = 3,
 	PRIORITY_ERR = 4,
 	ID_ERR		 = 5,
+	UPDATED_ERR  = 6,
 
 };
 string err(int num_err)

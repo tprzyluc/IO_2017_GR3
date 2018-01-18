@@ -3,6 +3,7 @@
 // Used by IO_2017_GR3.rc
 
 // Nastêpne wartoœci domyœlne dla nowych obiektów
+// Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS

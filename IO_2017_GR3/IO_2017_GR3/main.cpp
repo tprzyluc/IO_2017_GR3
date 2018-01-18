@@ -3,7 +3,7 @@
 #include "dump.h"
 #include "TemporaryComment.h"
 #include "DeleteTask.h"
-
+#include "CommentNotification.h"
 using namespace std;
 
 
@@ -28,7 +28,7 @@ int main()
 	TemporaryComment comment("Kacper", "Lprem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum");
 	test2_comment<TemporaryComment>(comment);
 	cout << comment.date << endl;
-
+	commentNotification(comment);
 
 	system("pause");
 	return 0;
