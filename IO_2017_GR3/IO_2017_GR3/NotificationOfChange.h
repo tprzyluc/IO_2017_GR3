@@ -8,13 +8,14 @@
 using namespace std;
 
 
-class DeleteFromTask
+class NotificationOfChange
 {
 public:
 	Task zadanie;
-	string delete_task(Task *&zadanie);
-	DeleteFromTask();
-	void print(string);
-	~DeleteFromTask();
+
+	string change(Task *&zadanie);
+	void print(string komunikat);
+	NotificationOfChange();
+	~NotificationOfChange();
 };
 

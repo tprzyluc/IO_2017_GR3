@@ -116,19 +116,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="add_comment.cpp" />
-    <ClCompile Include="DeleteFromTask.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NotificationOfChange.cpp" />
     <ClCompile Include="Pracownik.cpp" />
     <ClCompile Include="Task.cpp" />
     <ClCompile Include="TemporaryComment.cpp" />
     <ClCompile Include="Zadanie.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DeleteFromTask.h" />
+    <ClInclude Include="DeleteTask.h" />
     <ClInclude Include="dump.h" />
+    <ClInclude Include="CommentNotification.h" />
     <ClInclude Include="Komentarz.h" />
     <ClInclude Include="Nagłówek.h" />
+    <ClInclude Include="NotificationOfChange.h" />
     <ClInclude Include="Pracownik.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Task.h" />
     <ClInclude Include="TemporaryComment.h" />
     <ClInclude Include="Tests.h" />
