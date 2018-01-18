@@ -30,7 +30,7 @@ string NotificationOfChange::change(Task *&zadanie)
 	}
 	else
 	{
-		string komunikat = "Nie nast¹pi³a zmiana w zadaniu!";
+		string komunikat = "Nie nastapila zmiana w zadaniu!";
 
 		return komunikat;
 	}
