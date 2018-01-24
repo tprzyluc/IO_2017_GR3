@@ -1,9 +1,10 @@
 #include"NotificationOfChange.h"
 
+#include"NotificationOfChange.h"
+#include <stdio.h>
 #include <string>
-#include "Zadanie.h"
-#include "Pracownik.h"
 #include <iostream>
+#include <Windows.h>
 #include "Task.h"
 
 using namespace std;
@@ -13,33 +14,32 @@ NotificationOfChange::NotificationOfChange()
 
 }
 
-string NotificationOfChange::change(Task *&zadanie)
+void NotificationOfChange::change(Task *&zadanie)
 {
+	string komunikat, id, assigne, task, description;
+	string tmp;
+
 	if (zadanie->updated != 0)
 	{
-		string komunikat, id, assigne, task, description;
+		id = "Zmiana w zadaniu: ";
+		assigne = "Assigne: " + zadanie->assigne;
+		description = "Opis zadania: " + zadanie->description;
 
-		id = "Zmiana w zadaniu: " + zadanie->id;
-		assigne = "\nAssigne: " + zadanie->assigne;
-		task = "\nZadanie: " + zadanie->id;
-		description = "\nOpis: " + zadanie->description;
-
-		komunikat = id + assigne + task + description;
-
-		return komunikat;
+		komunikat = assigne + "\n" + description;
+		int msgboxID = MessageBox(NULL, komunikat.c_str(), id.c_str(), MB_ICONEXCLAMATION | MB_OK);
 	}
 	else
 	{
-		string komunikat = "Nie nastapila zmiana w zadaniu!";
+		assigne = "Assigne: " + zadanie->assigne;
+		description = "Opis: " + zadanie->description;
 
-		return komunikat;
+		string komunikat = "Nie nastapila zmiana w zadaniu!\n";
+		string opis = assigne + "\n" + description;
+
+		int msgboxID = MessageBox(NULL, opis.c_str(), komunikat.c_str(), MB_ICONEXCLAMATION | MB_OK);
 	}
+}
 
-}
-void NotificationOfChange::print(string komunikat)
-{
-	cout << komunikat << endl;
-}
 NotificationOfChange::~NotificationOfChange()
 {
 
