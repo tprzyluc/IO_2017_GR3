@@ -59,12 +59,19 @@ int main()
 	
 
 
-	cout << "WERKA ----------------------------" << endl;
+	cout << "-------------------------------" << endl;
 	Zadanie* zadanie = new Zadanie();
-	
-
+	//zadanie->creator = "ola";
+	//zadanie->owner = "asia";
+	//zadanie->opis = "Lorem ipsum";
+	//zadanie->priorytet = 50;
+	//zadanie->id_zadania = 1;
 	AssignmentTask(zadanie);
+	//test1_assign_task(*&zadanie);
 	//test2_assign_task(*&zadanie);
+
+
+
 
 
 
