@@ -712,13 +712,12 @@ void test2_comment(Comment comment)
 
 
 
-int test1_assign_task(Zadanie* zadanie) //Task* task
-{
-	bool debug = false;
+int test1_assign_task(Zadanie* zadanie) {
+	bool debug = true;
 	srand(time(NULL));
 	dump("Starting test for checking assignment ", debug);
 	clear_view();
-	int fails = 0;
+	int bledy = 0;
 	bool status;
 	code_err error_code;
 
@@ -727,15 +726,16 @@ int test1_assign_task(Zadanie* zadanie) //Task* task
 		error_code = ID_ERR;
 		status = false;
 		dump_status(err(error_code), status, debug);
-		fails++;
+		bledy++;
+
 	}
 
 	if (zadanie->priorytet < 0)
 	{
-		error_code = ID_ERR;
+		error_code = PRIORITY_ERR;
 		status = false;
 		dump_status(err(error_code), status, debug);
-		fails++;
+		bledy++;
 	}
 
 
@@ -743,17 +743,20 @@ int test1_assign_task(Zadanie* zadanie) //Task* task
 		error_code = DESC_ERR;
 		status = false;
 		dump_status(err(error_code), status, debug);
-		fails++;
+		bledy++;
 	}
 	else
 	{
 		for (int i = 0; i < zadanie->opis.length(); i++)
 		{
-			if ((zadanie->opis[i] < 97 && zadanie->opis[i]>122) || (zadanie->opis[i] < 65 && zadanie->opis[i]>90)) {
+			if ((zadanie->opis[i] >= 97 && zadanie->opis[i] <= 122) || (zadanie->opis[i] >= 65 && zadanie->opis[i] <= 90))
+			{
+			}
+			else {
 				error_code = DESC_ERR;
 				status = false;
 				dump_status(err(error_code), status, debug);
-				fails++;
+				bledy++;
 
 			}
 		}
@@ -765,8 +768,8 @@ int test1_assign_task(Zadanie* zadanie) //Task* task
 	if (zadanie->creator == "") {
 		error_code = CREATOR_ERR;
 		status = false;
-		dump_status(err(error_code), status);
-		fails++;
+		dump_status(err(error_code), status, debug);
+		bledy++;
 
 	}
 	else
@@ -775,10 +778,12 @@ int test1_assign_task(Zadanie* zadanie) //Task* task
 		{
 
 			if ((zadanie->creator[i] >= 97 && zadanie->creator[i] <= 122) || (zadanie->creator[i] >= 65 && zadanie->creator[i] <= 90)) {
+			}
+			else {
 				error_code = CREATOR_ERR;
 				status = false;
 				dump_status(err(error_code), status, debug);
-				fails++;
+				bledy++;
 
 			}
 		}
@@ -788,7 +793,7 @@ int test1_assign_task(Zadanie* zadanie) //Task* task
 		error_code = ASSIGNE_ERR;
 		status = false;
 		dump_status(err(error_code), status, debug);
-		fails++;
+		bledy++;
 
 	}
 	else
@@ -796,34 +801,37 @@ int test1_assign_task(Zadanie* zadanie) //Task* task
 		for (int i = 0; i <zadanie->owner.length(); i++)
 		{
 			if ((zadanie->owner[i] >= 97 && zadanie->owner[i] <= 122) || (zadanie->owner[i] >= 65 && zadanie->owner[i] <= 90)) {
+			}
+			else {
 				error_code = ASSIGNE_ERR;
 				status = false;
 				dump_status(err(error_code), status, debug);
-				fails++;
+				bledy++;
 
 			}
 		}
 	}
 
-
-	if (fails == 0)
+	
+	if (bledy == 0)
 	{
-		dump_status("STATUS TEST: FAIL", debug);
-		dump_status("number of fails: ", fails, debug);
+		dump_status("STATUS TEST: PASS", debug);
+		dump_status("number of fails: ", bledy, debug);
 
 	}
 	else
 	{
-		dump_status("STATUS TEST: PASS", debug);
-		dump_status("number of fails: ", 123, debug);
+		dump_status("STATUS TEST: Fail", debug);
+		dump_status("number of fails: ", bledy, debug);
 	}
 
 	dump("End of test", debug);
 
 
-	return fails;
+	return bledy;
 
 }
+
 
 
 int test2_assign_task(Zadanie* zadanie)
