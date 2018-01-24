@@ -126,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AssignmentToTask.h" />
+    <ClInclude Include="CommentAssignment.h" />
     <ClInclude Include="DeleteTask.h" />
     <ClInclude Include="dump.h" />
     <ClInclude Include="CommentNotification.h" />

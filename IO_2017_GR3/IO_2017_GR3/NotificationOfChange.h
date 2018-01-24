@@ -13,8 +13,7 @@ class NotificationOfChange
 public:
 	Task zadanie;
 
-	string change(Task *&zadanie);
-	void print(string komunikat);
+	void change(Task *&zadanie);
 	NotificationOfChange();
 	~NotificationOfChange();
 
