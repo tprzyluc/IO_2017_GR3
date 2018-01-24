@@ -548,7 +548,7 @@ int test1_assign_task(Zadanie* zadanie) //Task* task
 int test2_assign_task(Zadanie* zadanie)
 {
 
-	bool debug = false;
+	bool debug = true;
 
 	dump("Starting test for checking task", debug);
 	clear_view();
@@ -600,6 +600,7 @@ int test2_assign_task(Zadanie* zadanie)
 					status = false;
 					dump_status(err(error_code), status, debug);
 					fails++;
+					break;
 
 				}
 			}
@@ -614,14 +615,14 @@ int test2_assign_task(Zadanie* zadanie)
 		}
 		else if (1)
 		{
-			for (int i = 0; i <zadanie[j].owner.length(); i++)
+			for (int i = 0; i < zadanie[j].owner.length(); i++)
 			{
 				if ((zadanie[j].owner[i] >= 97 && zadanie[j].owner[i] <= 122) || (zadanie[j].owner[i] >= 65 && zadanie[j].owner[i] <= 90) || (zadanie[j].owner[i] == 32)) {
 					error_code = ASSIGNE_ERR;
 					status = false;
 					dump_status(err(error_code), status, debug);
 					fails++;
-
+					break;
 				}
 			}
 		}
@@ -640,7 +641,7 @@ int test2_assign_task(Zadanie* zadanie)
 					status = false;
 					dump_status(err(error_code), status, debug);
 					fails++;
-
+					break;
 				}
 			}
 		}
@@ -660,6 +661,7 @@ int test2_assign_task(Zadanie* zadanie)
 			dump_status(err(error_code), status, debug);
 			fails++;
 		}
+	}
 
 		fails = 3;
 
@@ -679,7 +681,7 @@ int test2_assign_task(Zadanie* zadanie)
 
 
 		return fails;
-	}
+	
 }
 
 
