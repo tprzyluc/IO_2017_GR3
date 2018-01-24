@@ -1,6 +1,7 @@
 application/cache
 *.vcxproj
 *.vcxproj.*
+IO_2017_GR3/IO_2017_GR3/IO_2017_GR3.vcxproj
 IO_2017_GR3/Debug/*
 *.[Oo]bj
 *.user

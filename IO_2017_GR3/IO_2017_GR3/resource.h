@@ -2,6 +2,7 @@
 // Microsoft Visual C++ generated include file.
 // Used by IO_2017_GR3.rc
 
+// Nastêpne wartoœci domyœlne dla nowych obiektów
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
