@@ -4,6 +4,7 @@
 #include "TemporaryComment.h"
 #include "DeleteTask.h"
 #include "CommentNotification.h"
+#include "CommentAssignment.h"
 using namespace std;
 
 
@@ -29,6 +30,12 @@ int main()
 	test2_comment<TemporaryComment>(comment);
 	cout << comment.date << endl;
 	commentNotification(comment);
+
+	Zadanie* zadanie = new Zadanie();
+	
+
+	AssignmentTask(zadanie);
+	//test2_assign_task(*&zadanie);
 
 	system("pause");
 	return 0;
