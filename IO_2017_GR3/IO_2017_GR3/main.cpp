@@ -4,6 +4,7 @@
 #include "TemporaryComment.h"
 #include "DeleteTask.h"
 #include "CommentNotification.h"
+#include "NotificationOfChange.h"
 using namespace std;
 
 
@@ -11,14 +12,25 @@ using namespace std;
 int main()
 {
 	Task *task = new Task();
+	
 	//test1_delete_task(*&task);
 	task->assigne = "Roman";
 	task->description = "janek";
-	task->reporter =  "dom";
+	task->reporter =  "adam";
+	task->created = 5.0;
+	task->updated = 0.0;
+	
+	//DeleteTask(task);
+	//test2_delete_task(*&task);
+	//cout << endl;
 
-	DeleteTask(task);
-	test2_delete_task(*&task);
+	
+	Test1_For_Change(*&task);
 	cout << endl;
+	Test2_For_Change(*&task);
+	cout << endl;
+
+
 	//task->description = " Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum";
 	//cout << task->description << endl;
 	//dump(task->description);
@@ -30,6 +42,7 @@ int main()
 	cout << comment.date << endl;
 	commentNotification(comment);
 
+	
 
 
 	system("pause");

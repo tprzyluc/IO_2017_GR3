@@ -266,11 +266,292 @@ int test2_delete_task(Task *task)
 	return cnt_fails;
 }
 
+//tests for NotificationOfChange class
+
+int Test1_For_Change(Task *task)
+{
+	bool debug = true;
+	
+	dump("Starting test for checking task", debug);
+	clear_view();
+
+	int numFail = 0;
+	bool status;
+	code_err error_code;
+	srand(time(NULL));
+
+	task = new Task[3];
+
+	task[0].id = rand();
+	task[0].reporter = "Micha³ Nowakowski";
+	task[0].description = "ChangeTask";
+	task[0].assigne = "Anna Kowalska";
+	task[0].created = rand();
+	task[0].updated = rand();
+
+	task[1].id = rand();
+	task[1].reporter = "Micha³ Nowakowski";
+	task[1].description = "ChangeTask";
+	task[1].assigne = "";
+	task[1].created = rand();
+	task[1].updated;
+
+	task[2].id;
+	task[2].reporter = "";
+	task[2].description = "ChangeTask";
+	task[2].assigne = "Anna Kowalska";
+	task[2].created;
+	task[2].updated = rand();
 
 
+	for (int j = 0; j < cnt_case; j++)
+	{
+
+		if (task[j].id < 0 || sizeof(task[j].id) != 4)
+		{
+			error_code = ID_ERR;
+			status = false;
+			dump_status(err(error_code), status, debug);
+			numFail++;
+		}
+		if (task[j].created < 0 || sizeof(task[j].created) != 8)
+		{
+			error_code = CREATED_ERR;
+			status = false;
+			dump_status(err(error_code), status, debug);
+			numFail++;
+		}
+
+		if (task[j].updated < 0 || sizeof(task[j].updated) != 8)
+		{
+			error_code = UPDATED_ERR;
+			status = false;
+			dump_status(err(error_code), status, debug);
+			numFail++;
+		}
 
 
+		if (task[j].reporter == "") {
+			error_code = CREATOR_ERR;
+			status = false;
+			dump_status(err(error_code), status, debug);
+			numFail++;
 
+		}
+		else
+		{
+			for (int i = 0; i < task[j].reporter.length(); i++)
+			{
+				if ((task[j].reporter[i] >= 97 && task[j].reporter[i] <= 122) || (task[j].reporter[i] >= 65 && task[j].reporter[i] <= 90) || task[j].reporter[i] == 32)
+				{
+				}
+				else
+				{
+					error_code = CREATOR_ERR;
+					status = false;
+					dump_status(err(error_code), status, debug);
+					numFail++;
+
+				}
+			}
+		}
+		if (task[j].assigne == "") {
+			error_code = ASSIGNE_ERR;
+			status = false;
+			dump_status(err(error_code), status, debug);
+			numFail++;
+
+		}
+		else
+		{
+			for (int i = 0; i < task[j].assigne.length(); i++)
+			{
+				if ((task[j].assigne[i] >= 97 && task[j].assigne[i] <= 122) || (task[j].assigne[i] >= 65 && task[j].assigne[i] <= 90) || task[j].assigne[i] == 32)
+				{
+				}
+				else
+				{
+					error_code = ASSIGNE_ERR;
+					status = false;
+					dump_status(err(error_code), status, debug);
+					numFail++;
+
+				}
+			}
+		}
+		if (task[j].description == "") {
+			error_code = DESC_ERR;
+			status = false;
+			dump_status(err(error_code), status, debug);
+			numFail++;
+		}
+		else
+		{
+			for (int i = 0; i < task[j].description.length(); i++)
+			{
+				if ((task[j].description[i] >= 97 && task[j].description[i] <= 122) || (task[j].description[i] >= 65 && task[j].description[i] <= 90) || task[j].description[i] == 32)
+				{
+				}
+				else
+				{
+					error_code = DESC_ERR;
+					status = false;
+					dump_status(err(error_code), status, debug);
+					numFail++;
+
+				}
+			}
+		}
+
+	}
+	if (numFail > 0)
+	{
+		dump_status("STATUS TEST: FAIL", debug);
+		dump_status("number of fails: ", numFail, debug);
+
+	}
+	else
+	{
+		dump_status("STATUS TEST: PASS", debug);
+		dump_status("number of fails: ", 0, debug);
+	}
+
+	dump("End of test", debug);
+
+
+	return numFail;
+
+}
+
+int Test2_For_Change(Task *task)
+{
+	bool debug = true;
+
+	dump("Starting test for checking task", debug);
+	clear_view();
+
+	int numFail = 0;
+	bool status;
+	code_err error_code;
+	srand(time(NULL));
+
+	
+
+		if (task->id < 0 || sizeof(task->id) != 4)
+		{
+			error_code = ID_ERR;
+			status = false;
+			dump_status(err(error_code), status, debug);
+			numFail++;
+		}
+		if (task->created < 0 || sizeof(task->created) != 8)
+		{
+			error_code = CREATED_ERR;
+			status = false;
+			dump_status(err(error_code), status, debug);
+			numFail++;
+		}
+
+		if (task->updated < 0 || sizeof(task->updated) != 8)
+		{
+			error_code = UPDATED_ERR;
+			status = false;
+			dump_status(err(error_code), status, debug);
+			numFail++;
+		}
+
+
+		if (task->reporter == "") {
+			error_code = CREATOR_ERR;
+			status = false;
+			dump_status(err(error_code), status, debug);
+			numFail++;
+
+		}
+		else
+		{
+			for (int i = 0; i < task->reporter.length(); i++)
+			{
+				if ((task->reporter[i] >= 97 && task->reporter[i] <= 122) || (task->reporter[i] >= 65 && task->reporter[i] <= 90) || task->reporter[i] == 32)
+				{
+				}
+				else
+				{
+					error_code = CREATOR_ERR;
+					status = false;
+					dump_status(err(error_code), status, debug);
+					numFail++;
+
+				}
+			}
+		}
+		if (task->assigne == "") {
+			error_code = ASSIGNE_ERR;
+			status = false;
+			dump_status(err(error_code), status, debug);
+			numFail++;
+
+		}
+		else
+		{
+			for (int i = 0; i < task->assigne.length(); i++)
+			{
+				if ((task->assigne[i] >= 97 && task->assigne[i] <= 122) || (task->assigne[i] >= 65 && task->assigne[i] <= 90) || task->assigne[i] == 32)
+				{
+				}
+				else
+				{
+					error_code = ASSIGNE_ERR;
+					status = false;
+					dump_status(err(error_code), status, debug);
+					numFail++;
+
+				}
+			}
+		}
+		if (task->description == "") {
+			error_code = DESC_ERR;
+			status = false;
+			dump_status(err(error_code), status, debug);
+			numFail++;
+		}
+		else
+		{
+			for (int i = 0; i < task->description.length(); i++)
+			{
+				if ((task->description[i] >= 97 && task->description[i] <= 122) || (task->description[i] >= 65 && task->description[i] <= 90) || task->description[i] == 32)
+				{
+				}
+				else
+				{
+					error_code = DESC_ERR;
+					status = false;
+					dump_status(err(error_code), status, debug);
+					numFail++;
+
+				}
+			}
+		}
+		
+	
+	if (numFail > 0)
+	{
+		dump_status("STATUS TEST: FAIL", debug);
+		dump_status("number of fails: ", numFail, debug);
+
+	}
+	else
+	{
+		dump_status("STATUS TEST: PASS", debug);
+		dump_status("number of fails: ", 0, debug);
+	}
+
+	dump("End of test", debug);
+
+
+	return numFail;
+
+}
 
 
 

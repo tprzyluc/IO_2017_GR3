@@ -113,6 +113,8 @@ enum code_err {
 	ASSIGNE_ERR  = 3,
 	PRIORITY_ERR = 4,
 	ID_ERR		 = 5,
+	CREATED_ERR  = 6,
+	UPDATED_ERR	 = 7,
 
 };
 string err(int num_err)
@@ -134,7 +136,13 @@ string err(int num_err)
 		description = "This task has not got: Priority!";
 		return description;
 	case 5:
-		description = "This task has wrong ID - less than 0";
+		description = "This task has wrong ID - less than 0 or format is not correct, it should be INT";
+		return description;
+	case 6:
+		description = "This task has wrong CREATED number - less than 0 or format is not correct, it should be DOUBLE";
+		return description;
+	case 7:
+		description = "This task has wrong UPDATED number - less than 0 or format is not correct, it should be DOUBLE";
 		return description;
 	default:
 		break;
