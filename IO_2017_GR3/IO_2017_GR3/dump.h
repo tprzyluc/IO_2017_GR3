@@ -113,7 +113,6 @@ enum code_err {
 	ASSIGNE_ERR  = 3,
 	PRIORITY_ERR = 4,
 	ID_ERR		 = 5,
-	UPDATED_ERR  = 6,
 
 };
 string err(int num_err)
@@ -136,9 +135,6 @@ string err(int num_err)
 		return description;
 	case 5:
 		description = "This task has wrong ID - less than 0";
-		return description;
-	case 6:
-		description = "This task has not got: none!";
 		return description;
 	default:
 		break;

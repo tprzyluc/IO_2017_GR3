@@ -17,5 +17,6 @@ public:
 	void print(string komunikat);
 	NotificationOfChange();
 	~NotificationOfChange();
+
 };
 

@@ -31,11 +31,15 @@ int main()
 	cout << comment.date << endl;
 	commentNotification(comment);
 
+<<<<<<< HEAD
 	Zadanie* zadanie = new Zadanie();
 	
 
 	AssignmentTask(zadanie);
 	//test2_assign_task(*&zadanie);
+=======
+
+>>>>>>> 80e31e14862e28e88f0b289095eb2a24761a9e52
 
 	system("pause");
 	return 0;
