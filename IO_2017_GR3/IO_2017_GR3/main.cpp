@@ -66,10 +66,20 @@ int main()
 	//zadanie->opis = "Lorem ipsum";
 	//zadanie->priorytet = 50;
 	//zadanie->id_zadania = 1;
-	AssignmentTask(zadanie);
+
+	zadanie->creator = "Kowalski Janek";
+	zadanie->owner = "Tytus Troszczytus";
+	zadanie->id_zadania = 102;
+	zadanie->priorytet = 1;
+	zadanie->opis = " Tam ta ram tam dam";
+
+	
+
+	Zadanie* zadanie1 = new Zadanie();
+	AssignmentTask(zadanie1);
 	//test1_assign_task(*&zadanie);
 	//test2_assign_task(*&zadanie);
-
+	AssignmentTask2(zadanie);
 
 
 

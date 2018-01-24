@@ -834,7 +834,7 @@ int test1_assign_task(Zadanie* zadanie) {
 
 
 
-int test2_assign_task(Zadanie* zadanie)
+int test2_assign_task(Zadanie* zadanie123)
 {
 
 	bool debug = true;
@@ -843,134 +843,175 @@ int test2_assign_task(Zadanie* zadanie)
 	clear_view();
 	int fails = 0;
 	bool status;
+	int check = 5;
 	code_err error_code;
 
-	zadanie = new Zadanie[cnt_case];
-	zadanie[0].id_zadania = 1234;
-	zadanie[0].creator = "Jan Kowalski";
-	zadanie[0].owner = "Adam Nowak";
-	zadanie[0].opis = "Lorem ipsum";
-	zadanie[0].priorytet = rand();
+	zadanie123 = new Zadanie[check];
+	for (int i = 0; i < check; i++)
+	{
+		zadanie123[i].id_zadania = 0;
+		zadanie123[i].creator = "";
+		zadanie123[i].owner = "";
+		zadanie123[i].opis = "";
+		zadanie123[i].priorytet = 0;
+
+	}
+	zadanie123[0].id_zadania = 1234;
+	zadanie123[0].creator = "Janek Kowalski";
+	zadanie123[0].owner = "";
+	zadanie123[0].opis = "Tytus Tytus Tytus";
+	zadanie123[0].priorytet = 1;
 
 
-	zadanie[0].id_zadania = 1234;
-	zadanie[0].creator = "Jan Kowalski";
-	zadanie[0].owner = "fghj";
-	zadanie[0].opis = "Lorem ipsum";
-	zadanie[0].priorytet = rand();
+	zadanie123[1].id_zadania = 123;
+	zadanie123[1].creator = "Janek Kowalski";
+	zadanie123[1].owner = "Tytusz Troszczytus";
+	zadanie123[1].opis = "";
+	zadanie123[1].priorytet = 2;
 
-	zadanie[0].id_zadania = 1234;
-	zadanie[0].creator = "fgh";
-	zadanie[0].owner = "Adam Nowak";
-	zadanie[0].opis = "Lorem ipsum";
-	zadanie[0].priorytet = rand();
+	zadanie123[2].id_zadania = 123;
+	zadanie123[2].creator = "Janek Kowalski";
+	zadanie123[2].owner = "Tytus Troszczytus";
+	zadanie123[2].opis = "Lorem lorem ipsum";
+	zadanie123[2].priorytet = 3;
+
+	zadanie123[3].id_zadania = 12;
+	zadanie123[3].creator = "Janek Kowalski";
+	zadanie123[3].owner = "Tytus Troszczytus";
+	zadanie123[3].opis = "Lorem lorem ipsum";
+	zadanie123[3].priorytet = 3;
+
+	zadanie123[4].id_zadania = 123;
+	zadanie123[4].creator = "";
+	zadanie123[4].owner = "Tytus Troszczytus";
+	zadanie123[4].opis = "Lorem lorem ipsum";
+	zadanie123[4].priorytet = -1;
 
 
 
-
-	for (int j = 0; j < cnt_case; j++)
+	for (int j = 0; j < 5; j++)
 	{
 
 
-		if (zadanie[j].creator == "") {
+		if (zadanie123[j].creator == "") {
 			error_code = CREATOR_ERR;
 			status = false;
-			dump_status(err(error_code), status);
+			dump_status(err(error_code), status, debug);
 			fails++;
+
 
 		}
 		else if (1)
 		{
-			for (int i = 0; i < zadanie[j].creator.length(); i++)
+			for (int i = 0; i < zadanie123[j].creator.length(); i++)
 			{
 
-				if ((zadanie[j].creator[i] >= 97 && zadanie[j].creator[i] <= 122) || (zadanie[j].creator[i] >= 65 && zadanie[j].creator[i] <= 90) || (zadanie[j].creator[i] == 32)) {
+				if ((zadanie123[j].creator[i] >= 97 && zadanie123[j].creator[i] <= 122) || (zadanie123[j].creator[i] >= 65 && zadanie123[j].creator[i] <= 90) || (zadanie123[j].creator[i] == 32)) {
+				}
+				else {
 					error_code = CREATOR_ERR;
 					status = false;
 					dump_status(err(error_code), status, debug);
 					fails++;
-					break;
+
+
 
 				}
 			}
 
 		}
-		if (zadanie[j].owner == "") {
+		if (zadanie123[j].owner == "") {
 			error_code = ASSIGNE_ERR;
 			status = false;
 			dump_status(err(error_code), status, debug);
 			fails++;
 
+
+
 		}
 		else if (1)
 		{
-			for (int i = 0; i < zadanie[j].owner.length(); i++)
+			for (int i = 0; i < zadanie123[j].owner.length(); i++)
 			{
-				if ((zadanie[j].owner[i] >= 97 && zadanie[j].owner[i] <= 122) || (zadanie[j].owner[i] >= 65 && zadanie[j].owner[i] <= 90) || (zadanie[j].owner[i] == 32)) {
+				if ((zadanie123[j].owner[i] >= 97 && zadanie123[j].owner[i] <= 122) || (zadanie123[j].owner[i] >= 65 && zadanie123[j].owner[i] <= 90) || (zadanie123[j].owner[i] == 32)) {
+				}
+				else
+				{
 					error_code = ASSIGNE_ERR;
 					status = false;
 					dump_status(err(error_code), status, debug);
 					fails++;
-					break;
+
 				}
 			}
 		}
-		if (zadanie[j].opis == "") {
+		if (zadanie123[j].opis == "") {
 			error_code = DESC_ERR;
 			status = false;
 			dump_status(err(error_code), status, debug);
 			fails++;
+
 		}
 		else if (1)
 		{
-			for (int i = 0; i < zadanie[j].opis.length(); i++)
+			for (int i = 0; i < zadanie123[j].opis.length(); i++)
 			{
-				if ((zadanie[j].opis[i] >= 97 && zadanie[j].opis[i] <= 122) || (zadanie[j].opis[i] >= 65 && zadanie[j].opis[i] <= 90) || (zadanie[j].opis[i] == 32)) {
+				if ((zadanie123[j].opis[i] >= 97 && zadanie123[j].opis[i] <= 122) || (zadanie123[j].opis[i] >= 65 && zadanie123[j].opis[i] <= 90) || (zadanie123[j].opis[i] == 32)) {
+
+				}
+				else
+				{
 					error_code = DESC_ERR;
 					status = false;
 					dump_status(err(error_code), status, debug);
 					fails++;
-					break;
+
 				}
 			}
 		}
 
+	}
+	for (int i = 0; i < 5; i++)
+	{
+		if (zadanie123[i].id_zadania < 0)
+		{
+			error_code = ID_ERR;
+			status = false;
+			dump_status(err(error_code), status, debug);
+			fails++;
 
-		if (zadanie[j].id_zadania < 0)
-		{
-			error_code = ID_ERR;
-			status = false;
-			dump_status(err(error_code), status, debug);
-			fails++;
+
 		}
-		if (zadanie[j].priorytet < 0)
+		if (zadanie123[i].priorytet < 0)
 		{
-			error_code = ID_ERR;
+			error_code = PRIORITY_ERR;
 			status = false;
 			dump_status(err(error_code), status, debug);
 			fails++;
+
 		}
 	}
 
-		fails = 3;
-
-		if (fails >0)
-		{
-			dump_status("STATUS TEST: FAIL", debug);
-			dump_status("number of fails: ", fails, debug);
-
-		}
-		else
-		{
-			dump_status("STATUS TEST: PASS", debug);
-			dump_status("number of fails: ", fails, debug);
-		}
-
-		dump("End of test", debug);
 
 
-		return fails;
-	
+
+	if (fails != 4)
+	{
+		dump_status("STATUS TEST: FAIL", debug);
+		dump_status("number of fails: ", fails, debug);
+
+	}
+	else
+	{
+		dump_status("STATUS TEST: PASS", debug);
+		dump_status("number of fails: ", fails, debug);
+	}
+
+	dump("End of test", debug);
+
+
+	return fails;
+
 }
 
 
