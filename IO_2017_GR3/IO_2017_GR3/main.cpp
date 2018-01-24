@@ -5,6 +5,7 @@
 #include "DeleteTask.h"
 #include "CommentNotification.h"
 #include "CommentAssignment.h"
+#include "NotificationOfChange.h"
 using namespace std;
 
 
@@ -39,6 +40,17 @@ int main()
 
 	AssignmentTask(zadanie);
 	//test2_assign_task(*&zadanie);
+
+
+
+	Task *task2 = new Task();
+	task2->assigne = "Jan12";
+	task2->description = "cos tamcos tamcos tamcos tamcos tamcos tamcos tamcos tamcos tamcos tamcos tamcos tam";
+	task2->created = 152.4;
+	task2->updated = 0;
+
+	NotificationOfChange *notif = new NotificationOfChange();
+	notif->change(task2);
 
 	system("pause");
 	return 0;

@@ -21,7 +21,7 @@ void NotificationOfChange::change(Task *&zadanie)
 
 	if (zadanie->updated != 0)
 	{
-		id = "Zmiana w zadaniu: ";
+		id = "Zmiana w zadaniu! ";
 		assigne = "Assigne: " + zadanie->assigne;
 		description = "Opis zadania: " + zadanie->description;
 
