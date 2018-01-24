@@ -8,9 +8,9 @@
 #include <stdlib.h>
 #define cnt_case 3
 
+int test2_delete_task(Task *task);
 
-
-int test1_delete_task(Task *task)
+int test1_delete_task(Task *task,int num_case)
 {
 	bool debug = true;
 	srand(time(NULL));
@@ -19,127 +19,137 @@ int test1_delete_task(Task *task)
 	int cnt_fails = 0;
 	bool status;
 	code_err error_code;
-
-	task = new Task[3];
-	task[0].reporter = "Jan Kowalski";
-	task[0].assigne = "Piotr Nowak";
-	task[0].description = "Loremipsum";
-	task[0].id = rand();
-	task[0].updated = rand();
-
-	task[1].reporter = "";
-	task[1].assigne = "Piotr Nowak";
-	task[1].description = "Lorem ipsum";
-	task[1].id = rand();
-	task[1].updated;
-
-	task[2].reporter = "Jan Kowalski";
-	task[2].assigne = "";
-	task[2].description = "Lorem ipsum";
-	task[2].id;
-	task[2].updated = rand();
-
 	
-	for (int j = 0; j < cnt_case; j++)
+	if (num_case == -1)
 	{
-		if (task[j].reporter == "") {
-			error_code = CREATOR_ERR;
-			status = false;
-			dump_status(err(error_code), status, debug);
-			cnt_fails++;
+		task = new Task[3];
+		task[0].reporter = "Jan Kowalski";
+		task[0].assigne = "Piotr Nowak";
+		task[0].description = "Loremipsum";
+		task[0].id = rand();
+		task[0].updated = rand();
 
-		}
-		else
-		{
-			for (int i = 0; i < task[j].reporter.length(); i++)
-			{
-				if ((task[j].reporter[i] >= 97 && task[j].reporter[i] <= 122) || (task[j].reporter[i] >= 65 && task[j].reporter[i] <= 90) || task[j].reporter[i] == 32)
-				{
-				}
-				else
-				{
-					error_code = CREATOR_ERR;
-					status = false;
-					dump_status(err(error_code), status, debug);
-					cnt_fails++;
+		task[1].reporter = "";
+		task[1].assigne = "Piotr Nowak";
+		task[1].description = "Lorem ipsum";
+		task[1].id = rand();
+		task[1].updated;
 
-				}
-			}
-		}
-		if (task[j].assigne == "") {
-			error_code = ASSIGNE_ERR;
-			status = false;
-			dump_status(err(error_code), status, debug);
-			cnt_fails++;
+		task[2].reporter = "Jan Kowalski";
+		task[2].assigne = "";
+		task[2].description = "Lorem ipsum";
+		task[2].id;
+		task[2].updated = rand();
 
-		}
-		else
-		{
-			for (int i = 0; i < task[j].assigne.length(); i++)
-			{
-				if ((task[j].assigne[i] >= 97 && task[j].assigne[i] <= 122) || (task[j].assigne[i] >= 65 && task[j].assigne[i] <= 90) || task[j].assigne[i] == 32)
-				{
-				}
-				else
-				{
-					error_code = ASSIGNE_ERR;
-					status = false;
-					dump_status(err(error_code), status, debug);
-					cnt_fails++;
-
-				}
-			}
-		}
-		if (task[j].description == "") {
-			error_code = DESC_ERR;
-			status = false;
-			dump_status(err(error_code), status, debug);
-			cnt_fails++;
-		}
-		else
-		{
-			for (int i = 0; i < task[j].description.length(); i++)
-			{
-				if ((task[j].description[i] >= 97 && task[j].description[i] <= 122) || (task[j].description[i] >= 65 && task[j].description[i] <= 90) || task[j].description[i] == 32)
-				{
-				}
-				else
-				{
-					error_code = DESC_ERR;
-					status = false;
-					dump_status(err(error_code), status, debug);
-					cnt_fails++;
-
-				}
-			}
-		}
-
-		if (task[j].id < 0)
-		{
-			error_code = ID_ERR;
-			status = false;
-			dump_status(err(error_code), status, debug);
-			cnt_fails++;
-		}
-		
+		num_case = cnt_case;
 	}
+	if (num_case == 0)
+	{
+		 test2_delete_task(task);
+	}
+	else
+	{
+
+		for (int j = 0; j < num_case; j++)
+		{
+			if (task[j].reporter == "") {
+				error_code = CREATOR_ERR;
+				status = false;
+				dump_status(err(error_code), status, debug);
+				cnt_fails++;
+
+			}
+			else
+			{
+				for (int i = 0; i < task[j].reporter.length(); i++)
+				{
+					if ((task[j].reporter[i] >= 97 && task[j].reporter[i] <= 122) || (task[j].reporter[i] >= 65 && task[j].reporter[i] <= 90) || task[j].reporter[i] == 32)
+					{
+					}
+					else
+					{
+						error_code = CREATOR_ERR;
+						status = false;
+						dump_status(err(error_code), status, debug);
+						cnt_fails++;
+
+					}
+				}
+			}
+			if (task[j].assigne == "") {
+				error_code = ASSIGNE_ERR;
+				status = false;
+				dump_status(err(error_code), status, debug);
+				cnt_fails++;
+
+			}
+			else
+			{
+				for (int i = 0; i < task[j].assigne.length(); i++)
+				{
+					if ((task[j].assigne[i] >= 97 && task[j].assigne[i] <= 122) || (task[j].assigne[i] >= 65 && task[j].assigne[i] <= 90) || task[j].assigne[i] == 32)
+					{
+					}
+					else
+					{
+						error_code = ASSIGNE_ERR;
+						status = false;
+						dump_status(err(error_code), status, debug);
+						cnt_fails++;
+
+					}
+				}
+			}
+			if (task[j].description == "") {
+				error_code = DESC_ERR;
+				status = false;
+				dump_status(err(error_code), status, debug);
+				cnt_fails++;
+			}
+			else
+			{
+				for (int i = 0; i < task[j].description.length(); i++)
+				{
+					if ((task[j].description[i] >= 97 && task[j].description[i] <= 122) || (task[j].description[i] >= 65 && task[j].description[i] <= 90) || task[j].description[i] == 32)
+					{
+					}
+					else
+					{
+						error_code = DESC_ERR;
+						status = false;
+						dump_status(err(error_code), status, debug);
+						cnt_fails++;
+
+					}
+				}
+			}
+
+			if (task[j].id < 0)
+			{
+				error_code = ID_ERR;
+				status = false;
+				dump_status(err(error_code), status, debug);
+				cnt_fails++;
+			}
+
+		}
 		if (cnt_fails > 0)
 		{
-			dump_status("STATUS TEST: FAIL",debug);
-			dump_status("number of fails: ", cnt_fails,debug);
+			dump_status("STATUS TEST: FAIL", debug);
+			dump_status("number of fails: ", cnt_fails, debug);
 
 		}
 		else
 		{
 			dump_status("STATUS TEST: PASS", debug);
-			dump_status("number of fails: ", 0,debug);
+			dump_status("number of fails: ", 0, debug);
 		}
 
-		dump("End of test",debug);
+		dump("End of test", debug);
 
-	
-	return cnt_fails;
 
+		return cnt_fails;
+	}
 }
 
 int test2_delete_task(Task *task)
@@ -231,22 +241,6 @@ int test2_delete_task(Task *task)
 			dump_status(err(error_code), status, debug);
 			cnt_fails++;
 		}
-		if (task->id < 0)
-		{
-			error_code = ID_ERR;
-			status = false;
-			dump_status(err(error_code), status, debug);
-			cnt_fails++;
-		}
-		if (task->id < 0)
-		{
-			error_code = ID_ERR;
-			status = false;
-			dump_status(err(error_code), status, debug);
-			cnt_fails++;
-		}
-
-
 
 		if (cnt_fails > 0)
 		{

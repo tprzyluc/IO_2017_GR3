@@ -4,8 +4,8 @@
 
 Task::Task()
 {
-	this->id = NULL;
-	this->user_id = NULL;
+	this->id = -1;
+	this->user_id = -1;
 	this->reporter = "";
 	this->assigne = "";
 	this->description = "";
