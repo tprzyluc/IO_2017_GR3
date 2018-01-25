@@ -16,3 +16,12 @@ void DeleteTask(Task *task)
 
 	}
 }
+void DeleteTaskList(Task *task, int num_case)
+{
+	if (test1_delete_task(task,num_case) == 0)
+	{
+		string mess = "Tasks have been deleted \n";
+		int msgboxID = MessageBox(NULL, mess.c_str(), NULL, MB_ICONEXCLAMATION | MB_OK);
+
+	}
+}
