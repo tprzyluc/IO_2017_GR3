@@ -13,17 +13,25 @@ using namespace std;
 int main()
 {
 	Task *task = new Task();
+	task->assigne = "Roman";
+	task->description = "janek";
+	task->reporter = "adam";
+	task->id = 5;
+	//test1_delete_task(*&task,0);
+	//test2_delete_task(*&task);
+	DeleteTask(task);
+	cout << endl;
 	
-	//test1_delete_task(*&task);
+	system("pause");
+
+
 	task->assigne = "Roman";
 	task->description = "janek";
 	task->reporter =  "adam";
 	task->created = 5.0;
 	task->updated = 0.0;
 	
-	//DeleteTask(task);
-	//test2_delete_task(*&task);
-	//cout << endl;
+	
 
 	
 	Test1_For_Change(*&task);
